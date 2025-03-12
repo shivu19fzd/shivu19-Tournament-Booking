@@ -1,0 +1,33 @@
+.tournament-card { 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease-in-out; 
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6); 
+    color: white; 
+}
+.tournament-card:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+    background: linear-gradient(135deg, #3b82f6, #1e3a8a); 
+}
+.navbar { 
+    transition: background 0.5s ease-in-out, padding 0.3s ease-in-out; 
+}
+body { 
+    transition: background 0.3s ease, color 0.3s ease; 
+}
+.button { 
+    position: relative; 
+    text-decoration: none; 
+    color: #fff; 
+    background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987); 
+    padding: 14px 25px; 
+    border-radius: 16px; 
+    font-size: 1.25em; 
+    cursor: pointer; 
+    border: none; 
+    display: inline-block; 
+    text-align: center; 
+}
+.button:disabled { 
+    background-color: #6b7280; 
+    cursor: not-allowed; 
+}
