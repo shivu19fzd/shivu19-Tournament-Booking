@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .tournament-card { transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease-in-out; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; }
+        .tournament-card:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); background: linear-gradient(135deg, #3b82f6, #1e3a8a); }
+        .navbar { transition: background 0.5s ease-in-out, padding 0.3s ease-in-out; }
+        body { transition: background 0.3s ease, color 0.3s ease; }
+        .button { position: relative; text-decoration: none; color: #fff; background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987); padding: 14px 25px; border-radius: 16px; font-size: 1.25em; cursor: pointer; border: none; display: inline-block; text-align: center; }
+        .button:disabled { background-color: #6b7280; cursor: not-allowed; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <header id="navbar" class="navbar bg-blue-600 text-white p-4 flex justify-between items-center fixed w-full top-0 z-50">
+        <h1 class="text-2xl font-bold">Tournament Booking</h1>
+        <nav>
+            <ul class="flex space-x-4 text-sm md:text-base">
+                <li><a href="#" class="hover:underline">Home</a></li>
+                <li><a href="#tournaments" class="hover:underline">Tournaments</a></li>
+                <li><a href="#profile" class="hover:underline">Profile</a></li>
+                <li><a href="#login" class="hover:underline">Login</a></li>
+            </ul>
+        </nav>
+        <button id="darkModeToggle" class="p-3 bg-gray-800 text-white rounded-full transition-all duration-300 hover:bg-gray-600 text-lg sm:text-xl">Dark Mode</button>
+    </header>
+    <main class="container mx-auto p-4 mt-16">
+        <section id="tournaments" class="mb-8">
+            <h2 class="text-xl font-bold mb-4 text-center text-blue-400">🔥 Tournament Listings 🔥</h2>
+            <div id="tournament-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6"></div>
+        </section>
+        <section id="free-tournaments" class="mb-8">
+            <h2 class="text-xl font-bold mb-4 text-center text-green-400">🎉 Free Tournament Listings 🎉</h2>
+            <div id="free-tournament-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6"></div>
+        </section>
+    </main>
+    <footer class="bg-blue-600 text-white p-4 text-center">
+        <p>Contact Me</p>
+        <p>Stay updated on:</p>
+        <p class="text-sm sm:text-base">
+            <a href="https://www.youtube.com/@ShivuGamer19" target="_blank" class="underline text-yellow-400 font-bold text-lg"><i class="fab fa-youtube"></i> YouTube</a> |
+            <a href="https://www.instagram.com/shivugamer19" target="_blank" class="underline text-pink-400 font-bold text-lg"><i class="fab fa-instagram"></i> Instagram</a>
+        </p>
+        <p>&copy; 2025 Tournament Booking. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById("darkModeToggle").addEventListener("click", function() {
+            document.body.classList.toggle("bg-gray-900");
+            document.body.classList.toggle("bg-white");
+            document.body.classList.toggle("text-black");
+        });
+
+        const tournaments = [
+    { name: "BR SOLO PAID CUSTOM TOURNAMENT", organizer: "Shivu Gamer 19", category: "Bermuda Custom", prize: "₹500", fee: "💰 Join Fee - ₹20", image: "https://storage.googleapis.com/a1aa/image/KqkM0taU6FNGm7LHQvta-3GqfVH47jzdduojhbA88h4.jpg" },
+    { name: "BR SQUID PAID CUSTOM TOURNAMENT", organizer: "Shivu Gamer 19", category: "Bermuda Custom", prize: "₹350", fee: "💰 Join Fee - ₹40 Full Team | Single Person - ₹10", image: "https://storage.googleapis.com/a1aa/image/KqkM0taU6FNGm7LHQvta-3GqfVH47jzdduojhbA88h4.jpg" },
+    { name: "CS 1VS1 PAID CUSTOM TOURNAMENT", organizer: "Shivu Gamer 19", category: "Bermuda Custom", prize: "₹35", fee: "💰 Join Fee - ₹20", image: "https://storage.googleapis.com/a1aa/image/KqkM0taU6FNGm7LHQvta-3GqfVH47jzdduojhbA88h4.jpg" },
+    { name: "CS 4VS4 PAID CUSTOM TOURNAMENT", organizer: "Shivu Gamer 19", category: "Bermuda Custom", prize: "₹150", fee: "💰 Join Fee - ₹80 Full Team | Single Person - ₹20", image: "https://storage.googleapis.com/a1aa/image/KqkM0taU6FNGm7LHQvta-3GqfVH47jzdduojhbA88h4.jpg" }
+];
+
+        const freeTournaments = [
+    { name: "Battle Royal FREE Tournament", organizer: "Shivu Gamer 19", category: "BR FREE SOLO CUSTOM", prize: "₹100", fee: "💰 Join Fee - Free", image: "https://storage.googleapis.com/a1aa/image/KqkM0taU6FNGm7LHQvta-3GqfVH47jzdduojhbA88h4.jpg", link: "https://docs.google.com/forms/d/e/1FAIpQLSeRhstuRqrJwo7m9A2waAcQiHjYaoel8JCjzDI49GHbxLMI0g/viewform?usp=header" },
+    { name: "CS 4VS4 FREE Tournament", organizer: "Shivu Gamer 19", category: "4VS4 Custom", prize: "₹100 (₹25 Per Member)", fee: "💰 Join Fee - Free", image: "https://storage.googleapis.com/a1aa/image/KqkM0taU6FNGm7LHQvta-3GqfVH47jzdduojhbA88h4.jpg", link: "https://docs.google.com/forms/d/e/1FAIpQLSeChna0EhPut1aP10lP2Mz29aVbLR_nekUjLnLtlu-qDaMNqw/viewform?usp=header" }
+];
+
+        const tournamentList = document.getElementById('tournament-list');
+        tournaments.forEach((t) => {
+            let tournamentCard = document.createElement('div');
+            tournamentCard.className = `p-4 rounded-lg shadow-lg tournament-card transition-all duration-300`;
+            tournamentCard.innerHTML = `
+                <img src="${t.image}" alt="${t.name}" class="w-full h-40 object-cover rounded-lg shadow">
+                <h3 class="text-lg font-bold mt-2">${t.name}</h3>
+                <p>Organized by <span class="text-yellow-300">${t.organizer}</span></p>
+                <p class="text-sm italic">${t.category}</p>
+                <p class="text-sm">🏆 Prize Pool: ${t.prize} | ${t.fee}</p>
+                <button class="button py-3 px-6 sm:py-4 sm:px-8" disabled>Coming Soon</button>
+            `;
+            tournamentList.appendChild(tournamentCard);
+        });
+
+        const freeTournamentList = document.getElementById('free-tournament-list');
+        freeTournaments.forEach((t) => {
+            let tournamentCard = document.createElement('div');
+            tournamentCard.className = `p-4 rounded-lg shadow-lg tournament-card transition-all duration-300`;
+            tournamentCard.innerHTML = `
+                <img src="${t.image}" alt="${t.name}" class="w-full h-40 object-cover rounded-lg shadow">
+                <h3 class="text-lg font-bold mt-2">${t.name}</h3>
+                <p>Organized by <span class="text-yellow-300">${t.organizer}</span></p>
+                <p class="text-sm italic">${t.category}</p>
+                <p class="text-sm">🏆 Prize Pool: ${t.prize} | ${t.fee}</p>
+                <button class="button py-3 px-6 sm:py-4 sm:px-8 join-now">Join Now</button>
+            `;
+            freeTournamentList.appendChild(tournamentCard);
+        });
+
+        document.querySelectorAll('.join-now').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.join-now').forEach((button, index) => {
+    button.addEventListener('click', function() {
+        window.open(freeTournaments[index].link, '_blank');
+    });
+}); 
+            });
+        });
+    </script>
+</body>
+</html>
+
