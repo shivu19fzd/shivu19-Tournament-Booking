@@ -63,7 +63,7 @@
 
         const freeTournaments = [
     { name: "Battle Royal FREE Tournament", organizer: "Shivu Gamer 19", category: "BR FREE SOLO CUSTOM", prize: "₹100", fee: "💰 Join Fee - Free", image: "https://storage.googleapis.com/a1aa/image/KqkM0taU6FNGm7LHQvta-3GqfVH47jzdduojhbA88h4.jpg", link: "https://docs.google.com/forms/d/e/1FAIpQLSeRhstuRqrJwo7m9A2waAcQiHjYaoel8JCjzDI49GHbxLMI0g/viewform?usp=header" },
-    { name: "CS 4VS4 FREE Tournament", organizer: "Shivu Gamer 19", category: "4VS4 Custom", prize: "₹100 (₹25 Per Member)", fee: "💰 Join Fee - Free", image: "https://storage.googleapis.com/a1aa/image/KqkM0taU6FNGm7LHQvta-3GqfVH47jzdduojhbA88h4.jpg", link: "https://docs.google.com/forms/d/e/1FAIpQLSeChna0EhPut1aP10lP2Mz29aVbLR_nekUjLnLtlu-qDaMNqw/viewform?usp=header" }
+    { name: "CS 4VS4 FREE Tournament", organizer: "Shivu Gamer 19", category: "4VS4 Custom", prize: "₹100 (₹25 Per Member)", fee: "💰 Join Fee - Free", image: "https://mail.google.com/mail/u/1/?ui=2&ik=fa65b4fa82&attid=0.1&permmsgid=msg-a:r-3558289645514372744&th=19593922389c8cdb&view=fimg&realattid=1959391e2b5bdae6b521&disp=thd&attbid=ANGjdJ-dHuUzEiI4YRbFzJWYL_ySjoNbhFnl4xXihvMgp9OvLTN7gZWMMjBLtcIUdvkwISpRLkAmyniaYdpgmEFiXCgmi2BXomKZ_wC8C5kfKKoME2PKhnLAqMsU7Co&ats=2524608000000&sz=w1358-h650", link: "https://docs.google.com/forms/d/e/1FAIpQLSeChna0EhPut1aP10lP2Mz29aVbLR_nekUjLnLtlu-qDaMNqw/viewform?usp=header" }
 ];
 
         const tournamentList = document.getElementById('tournament-list');
